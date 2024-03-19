@@ -40,6 +40,7 @@ angular.client/!.vscode/extensions.json
 angular.client/.history/*
 
 # IDEs and editors .NET.Server
+evers.sln
 asp.server/.idea/
 asp.server/.project
 asp.server/.classpath
@@ -67,3 +68,4 @@ angular.client/typings
 
 # OS
 .DS_Store
+diff.txt
