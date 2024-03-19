@@ -1,0 +1,69 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Node
+angular.client/node_modules
+angular.client/npm-debug.log
+angular.client/yarn-error.log
+
+# Angular build output
+angular.client/dist
+angular.client/tmp
+angular.client/bazel-out
+angular.client/out-tsc
+
+# .NET build output
+asp.server/bin/
+asp.server/obj/
+
+# Environment files
+angular.client/src/environments/*
+
+# System files
+angular.client/.DS_Store
+angular.client/Thumbs.db
+
+# IDEs and editors Angular.Client
+angular.client/.idea/
+angular.client/.project
+angular.client/.classpath
+angular.client/.c9/
+angular.client/*.launch
+angular.client/.settings/
+angular.client/*.sublime-workspace
+
+# Visual Studio Code Angular.Client
+angular.client/.vscode/*
+angular.client/!.vscode/settings.json
+angular.client/!.vscode/tasks.json
+angular.client/!.vscode/launch.json
+angular.client/!.vscode/extensions.json
+angular.client/.history/*
+
+# IDEs and editors .NET.Server
+asp.server/.idea/
+asp.server/.project
+asp.server/.classpath
+asp.server/.c9/
+asp.server/*.launch
+asp.server/.settings/
+asp.server/*.sublime-workspace
+
+# Visual Studio Code .NET.Server
+asp.server/.vscode/*
+asp.server/!.vscode/settings.json
+asp.server/!.vscode/tasks.json
+asp.server/!.vscode/launch.json
+asp.server/!.vscode/extensions.json
+asp.server/.history/*
+
+# Miscellaneous Angular.Client
+angular.client/.angular/cache
+angular.client/.sass-cache/
+angular.client/connect.lock
+angular.client/coverage
+angular.client/libpeerconnection.log
+angular.client/testem.log
+angular.client/typings
+
+# OS
+.DS_Store
