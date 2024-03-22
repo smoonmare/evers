@@ -1,1 +1,12 @@
-<p>inventory-page works!</p>
+<div class="inventory-grid">
+  <ul>
+    *@for (item of inventory; track item) {
+      <li>
+        <app-inventory-card [item]="item" (click)="viewDetails(item.id)"></app-inventory-card>
+      </li>
+    }
+    @empty {
+      <li>No items found in inventory.</li>
+    }
+  </ul>
+</div>

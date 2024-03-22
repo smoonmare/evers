@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Machine } from '../../shared/models/machine.model';
 
 @Component({
   selector: 'app-inventory-card',
@@ -8,5 +9,6 @@ import { Component } from '@angular/core';
   styleUrl: './inventory-card.component.scss'
 })
 export class InventoryCardComponent {
+  @Input() item: Machine | undefined;
 
 }
