@@ -1,0 +1,86 @@
+[
+  {
+    "id": "ded660aa-4695-411e-bee6-5501235dce6a",
+    "name": "Bulldozer XT500",
+    "year": 1994,
+    "description": "Heavy-duty bulldozer with advanced terrain adaptability. Features include enhanced durability, a powerful diesel engine for maximum efficiency, and a high-capacity blade for large-scale earthmoving tasks. Ideal for construction and mining operations.",
+    "category": "Construction Equipment",
+    "price": 36476,
+    "location": "North Dennis",
+    "images": [],
+    "thumbnail": "",
+    "status": "sold"
+  },
+  {
+    "id": "d97e7ef2-b4b2-480d-b270-f488424530a2",
+    "name": "Tractor ProMax 2000",
+    "year": 1990,
+    "description": "Versatile tractor designed for high-performance agricultural tasks. Equipped with a turbocharged engine, ergonomic controls, and adaptable attachments for plowing, seeding, and harvesting. Efficient fuel consumption meets power needs for modern farming.",
+    "category": "Agricultural Machinery",
+    "price": 52024,
+    "location": "Port Samuel",
+    "images": [],
+    "thumbnail": "",
+    "status": "available"
+  },
+  {
+    "id": "065766a7-d9ff-433d-86c4-15931d050039",
+    "name": "Excavator Series X2",
+    "year": 1996,
+    "description": "Advanced excavator with precision control and high-efficiency hydraulic system. Ideal for complex digging operations and construction sites.",
+    "category": "Excavation Equipment",
+    "price": 48500,
+    "location": "Grandfield Junction",
+    "images": [],
+    "thumbnail": "",
+    "status": "available"
+  },
+  {
+    "id": "31d3283d-9cbb-4197-aecc-a4cfddd785bb",
+    "name": "Loader LX900",
+    "year": 1998,
+    "description": "High capacity wheel loader designed for heavy lifting and material transport in mining and quarry operations. Features robust construction for durability in tough conditions.",
+    "category": "Loading Machinery",
+    "price": 55000,
+    "location": "East Quarry",
+    "images": [],
+    "thumbnail": "",
+    "status": "sold"
+  },
+  {
+    "id": "c856b3ae-66a9-4a37-849b-b7b8dba4228b",
+    "name": "Backhoe FlexDig 770",
+    "year": 2000,
+    "description": "Versatile backhoe loader with advanced maneuverability and digging capabilities. Equipped for a variety of tasks from excavation to material handling.",
+    "category": "Digging and Construction",
+    "price": 32700,
+    "location": "Meadow Ridge",
+    "images": [],
+    "thumbnail": "",
+    "status": "available"
+  },
+  {
+    "id": "9831893e-01ec-41cd-a627-46c6c980f5fe",
+    "name": "Dump Truck DT45",
+    "year": 2002,
+    "description": "Heavy-duty dump truck with maximum payload capacity. Designed for efficient material transport in mining and large-scale construction projects.",
+    "category": "Transportation Equipment",
+    "price": 60000,
+    "location": "Hilltop Base",
+    "images": [],
+    "thumbnail": "",
+    "status": "sold"
+  },
+  {
+    "id": "db418d50-0c94-4293-ae4c-30f9350ba14f",
+    "name": "Forklift PowerLift 3000",
+    "year": 1999,
+    "description": "Compact forklift with exceptional lift capacity and maneuverability for warehouse operations and material handling. Features eco-friendly engine options.",
+    "category": "Material Handling",
+    "price": 22000,
+    "location": "Industrial Park",
+    "images": [],
+    "thumbnail": "",
+    "status": "available"
+  }
+]
