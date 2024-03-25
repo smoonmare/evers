@@ -1,3 +1,29 @@
-.mat-card {
-  // Custom styles for the card
+/* inventory-card.component.scss */
+
+.machine-card {
+  width: 100%; // Adjust width as needed
+  margin-bottom: 20px;
+
+  .mat-card-image {
+    height: 200px; // Fixed height for images
+    object-fit: cover; // Cover the card area without stretching the image
+  }
+
+  .mat-card-header-text {
+    margin: 0; // Adjust card header text margin
+  }
+
+  .mat-card-title {
+    font-size: 1.2rem; // Larger title font size
+  }
+
+  .mat-card-subtitle {
+    font-size: 1rem; // Adjust subtitle font size
+  }
+
+  .mat-card-content {
+    p {
+      margin: 0; // Remove margins from paragraphs in content
+    }
+  }
 }
