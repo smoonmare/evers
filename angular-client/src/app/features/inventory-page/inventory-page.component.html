@@ -1,12 +1,8 @@
 <div class="inventory-grid">
-  <ul>
-    *@for (item of inventory; track item.id) {
-      <li>
+    @for (item of inventory; track item.id) {
         <app-inventory-card [item]="item" (click)="viewDetails(item.id)"></app-inventory-card>
-      </li>
     }
     @empty {
-      <li>No items found in inventory.</li>
+      No items found in inventory.
     }
-  </ul>
 </div>

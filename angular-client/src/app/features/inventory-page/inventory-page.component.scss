@@ -1,0 +1,8 @@
+/* inventory-page.component.scss */
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // Creates three columns
+  gap: 20px; // Sets the gap between grid items
+  padding: 20px; // Padding around the entire grid
+}

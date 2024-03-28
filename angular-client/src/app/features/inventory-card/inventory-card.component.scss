@@ -1,8 +1,11 @@
 /* inventory-card.component.scss */
 
 .machine-card {
-  width: 100%; // Adjust width as needed
-  margin-bottom: 20px;
+  // width: 100%; // Adjust width as needed
+  // margin-bottom: 20px;
+  margin: 20px;
+  max-width: 100%;
+  cursor: pointer;
 
   .mat-card-image {
     height: 200px; // Fixed height for images
