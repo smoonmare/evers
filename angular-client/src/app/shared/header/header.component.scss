@@ -1,0 +1,88 @@
+:host {
+  display: block;
+  height: 60px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 11;
+  transition: all 250ms ease-in-out;
+}
+
+.main-header {
+  @extend header;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.search-block {
+  width: 0%;
+  right: 0;
+  @extend header;
+  background: #fff;
+
+  &.active {
+    width: 100%;
+  }
+}
+
+.search-control {
+  flex: 1;
+  font-size: 1rem;
+  border: 0;
+  outline: none;
+  padding-left: 10px;
+}
+
+.layout-container {
+  overflow-x: hidden;
+}
+
+.toolbar-row {
+  padding: 0 5px;
+}
+
+.brand-container {
+  padding: 8px 0 0 10px;
+  flex: 1;
+
+  span {
+    font-size: 2rem; /* Increase the font size to make the text larger */
+    flex: 1;
+    text-align: center; /* Center the text horizontally */
+    font-weight: 650;
+  }
+  span a {
+    text-decoration: none; /* Removes underline from the link */
+    color: inherit; /* Ensures the link has the same color as the surrounding text */
+    cursor: pointer; /* Ensures the pointer cursor is used */
+  }
+}
+
+.search-icon {
+  margin-right: 10px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-right: 40px;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+
+    &.active-link {
+      color: #ff6f61; /* Highlight color for the active page. Adjust as needed. */
+    }
+
+    &:hover {
+      color: #ff6f61; /* Hover color. Adjust as needed. */
+    }
+  }
+}

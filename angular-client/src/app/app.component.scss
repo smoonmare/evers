@@ -1,0 +1,19 @@
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-header {
+  flex-shrink: 0; // This ensures that the header does not shrink
+}
+
+.router-container {
+  flex: 1; // This allows the router container to take up all available space
+}
+
+footer {
+  flex-shrink: 0; // This ensures that the footer does not shrink
+  text-align: center; // This centers the text in the footer
+  padding: 10px; // This adds some padding around the footer text
+}
