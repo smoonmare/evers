@@ -1,0 +1,20 @@
+/* contact-form.component.scss */
+.contact-form-section {
+  form {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      align-self: start;
+    }
+  }
+}
