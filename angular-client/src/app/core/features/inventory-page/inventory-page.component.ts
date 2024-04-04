@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
-import { Machine } from '../../shared/models/machine.model';
+import { Machine } from '../../../shared/models/machine.model';
 import { InventoryCardComponent } from '../inventory-card/inventory-card.component';
 import { Router } from '@angular/router';
-import { MachineService } from '../../shared/services/machine.service';
+import { MachineService } from '../../../shared/services/machine.service';
 
 @Component({
   selector: 'app-inventory-page',

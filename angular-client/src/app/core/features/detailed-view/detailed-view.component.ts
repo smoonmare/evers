@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Machine } from '../../shared/models/machine.model';
+import { Machine } from '../../../shared/models/machine.model';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({

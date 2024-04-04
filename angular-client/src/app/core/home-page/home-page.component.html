@@ -1,0 +1,16 @@
+<!-- home-page.component.html -->
+
+<section class="company-intro">
+  <h1>Welcome to EversWest Heavy Machinery</h1>
+  <p>Your trusted partner in heavy machinery equipment. With our expertise and commitment to quality, we aim to meet all your construction and industrial needs.</p>
+  <p>Our approach is simple: provide high-quality machines that get the job done, backed by exceptional customer service and support.</p>
+</section>
+
+<section class="inventory-preview">
+  <h2>Some of our Deals</h2>
+  <div class="inventory-grid">
+    @for (item of inventory; track item.id) {
+      <app-inventory-card [item]="item" (click)="viewDetails(item.id)"></app-inventory-card>
+    }
+  </div>
+</section>

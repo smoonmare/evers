@@ -1,0 +1,40 @@
+/* home-page.component.scss */
+
+.company-intro {
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  margin-bottom: 20px;
+
+  h1 {
+    color: #003366; // A dark blue tone
+  }
+
+  p {
+    color: #333;
+    line-height: 1.6;
+  }
+}
+
+.inventory-preview {
+  padding: 20px;
+
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // Creates three columns for larger screens
+    gap: 20px; // Sets the gap between grid items
+
+    // Add responsive design for smaller screens
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr); // Two columns for medium screens
+    }
+
+    @media (max-width: 576px) {
+      grid-template-columns: 1fr; // One column for small screens
+    }
+  }
+
+  h2 {
+    color: #003366; // A dark blue tone
+  }
+}

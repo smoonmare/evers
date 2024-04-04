@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Machine } from '../../shared/models/machine.model';
+import { Machine } from '../../../shared/models/machine.model';
 import { MatCardModule } from '@angular/material/card';
 
 @Component({
