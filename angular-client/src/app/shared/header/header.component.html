@@ -7,9 +7,10 @@
 
       <!-- Add navigation links for Home and Inventory -->
       <div class="nav-links">
-        <a routerLink="/" routerLinkActive="active-link" routerLinkActiveOptions="{ exact: true }">Home</a>
+        <a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Home</a>
         <a routerLink="/inventory" routerLinkActive="active-link"
-          routerLinkActiveOptions="{ exact: true }">Inventory</a>
+          [routerLinkActiveOptions]="{ exact: true }">Inventory</a>
+        <a routerLink="/services" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }">Services</a>
       </div>
 
       <button mat-icon-button (click)="openSearch()">
