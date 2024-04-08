@@ -12,8 +12,8 @@ angular.client/bazel-out
 angular.client/out-tsc
 
 # .NET build output
-asp.server/bin/
-asp.server/obj/
+AspServer/bin/*
+AspServer/obj/*
 
 # Environment files
 angular.client/src/environments/*
@@ -41,21 +41,21 @@ angular.client/.history/*
 
 # IDEs and editors .NET.Server
 evers.sln
-asp.server/.idea/
-asp.server/.project
-asp.server/.classpath
-asp.server/.c9/
-asp.server/*.launch
-asp.server/.settings/
-asp.server/*.sublime-workspace
+AspServer/.idea/
+AspServer/.project
+AspServer/.classpath
+AspServer/.c9/
+AspServer/*.launch
+AspServer/.settings/
+AspServer/*.sublime-workspace
 
 # Visual Studio Code .NET.Server
-asp.server/.vscode/*
-asp.server/!.vscode/settings.json
-asp.server/!.vscode/tasks.json
-asp.server/!.vscode/launch.json
-asp.server/!.vscode/extensions.json
-asp.server/.history/*
+AspServer/.vscode/*
+AspServer/!.vscode/settings.json
+AspServer/!.vscode/tasks.json
+AspServer/!.vscode/launch.json
+AspServer/!.vscode/extensions.json
+AspServer/.history/*
 
 # Miscellaneous Angular.Client
 angular.client/.angular/cache
