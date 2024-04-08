@@ -1,13 +1,14 @@
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using YourNamespace.Models; // Replace with your actual namespace
+using AspServer.Models;
+using AspServer.Settings;
 
 public class MachineService
 {
     private readonly IMongoCollection<Machine> _machines;
 
-    public MachineService(IYourDatabaseSettings settings)
+    public MachineService(IDatabaseSettings settings)
     {
         var client = new MongoClient(settings.ConnectionString);
         var database = client.GetDatabase(settings.DatabaseName);
