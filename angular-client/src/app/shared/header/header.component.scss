@@ -76,6 +76,7 @@ header {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s;
+    cursor: pointer;
 
     &.active-link {
       color: #ff6f61; /* Highlight color for the active page. Adjust as needed. */
