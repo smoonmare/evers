@@ -24,10 +24,19 @@ namespace EversServer.Services
         public async Task CreateAsync(Machine machine) =>
             await _machines.InsertOneAsync(machine);
 
-        public async Task UpdateAsync(string id, Machine machineIn) =>
-            await _machines.ReplaceOneAsync(machine => machine.Id == id, machineIn);
+        public async Task<bool> UpdateAsync(string id, Machine machineIn)
+        {
+            var updateResult = await _machines.ReplaceOneAsync(
+                machine => machine.Id == id, machineIn, new ReplaceOptions { IsUpsert = false });
+            return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
+        }
 
-        public async Task RemoveAsync(string id) =>
-            await _machines.DeleteOneAsync(machine => machine.Id == id);
+        // Updated method with acknowledgment check
+        public async Task<bool> RemoveAsync(string id)
+        {
+            var deleteResult = await _machines.DeleteOneAsync(machine => machine.Id == id);
+            return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
+        }
+
     }
 }
