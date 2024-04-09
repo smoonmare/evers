@@ -1,0 +1,6 @@
+@EversServer_HostAddress = http://localhost:5217
+
+GET {{EversServer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
