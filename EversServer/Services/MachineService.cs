@@ -1,6 +1,7 @@
 using MongoDB.Driver;
 using EversServer.Interfaces;
 using EversServer.Models;
+using System.Collections.Generic;
 
 namespace EversServer.Services
 {
@@ -24,19 +25,23 @@ namespace EversServer.Services
         public async Task CreateAsync(Machine machine) =>
             await _machines.InsertOneAsync(machine);
 
-        public async Task<bool> UpdateAsync(string id, Machine machineIn)
+        // Method for handling direct updates with a Machine object
+        public async Task<bool> UpdatePartialAsync(string id, Machine machineIn)
         {
-            var updateResult = await _machines.ReplaceOneAsync(
-                machine => machine.Id == id, machineIn, new ReplaceOptions { IsUpsert = false });
-            return updateResult.IsAcknowledged && updateResult.ModifiedCount > 0;
+            // Create a filter to find the document to update
+            var filter = Builders<Machine>.Filter.Eq(m => m.Id, id);
+
+            // Attempt to replace the found document with the supplied Machine object
+            var replaceResult = await _machines.ReplaceOneAsync(filter, machineIn, new ReplaceOptions { IsUpsert = false });
+
+            // Return true if the operation was acknowledged and at least one document was modified
+            return replaceResult.IsAcknowledged && replaceResult.ModifiedCount > 0;
         }
 
-        // Updated method with acknowledgment check
         public async Task<bool> RemoveAsync(string id)
         {
             var deleteResult = await _machines.DeleteOneAsync(machine => machine.Id == id);
             return deleteResult.IsAcknowledged && deleteResult.DeletedCount > 0;
         }
-
     }
 }

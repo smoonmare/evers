@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using EversServer.Models;
 using EversServer.Services;
@@ -47,18 +48,36 @@ namespace EversServer.Controllers
             return CreatedAtRoute("GetMachine", new { id = machine.Id?.ToString() }, machine);
         }
 
-        // PUT: api/Machine/5
-        [HttpPut("{id:length(24)}")]
-        public async Task<IActionResult> Put(string id, [FromBody] Machine machineIn)
+        // PATCH: api/Machine/5
+        [HttpPatch("{id:length(24)}")]
+        public async Task<IActionResult> Patch(string id, [FromBody] JsonPatchDocument<Machine> patchDoc)
         {
-            var machine = await _machineService.GetAsync(id);
+            if (patchDoc == null)
+            {
+                return BadRequest();
+            }
 
-            if (machine == null)
+            var machineFromDb = await _machineService.GetAsync(id);
+
+            if (machineFromDb == null)
             {
                 return NotFound();
             }
 
-            var updateResult = await _machineService.UpdateAsync(id, machineIn);
+            // Correct error handling in ApplyTo
+            patchDoc.ApplyTo(machineFromDb, (error) =>
+            {
+                ModelState.AddModelError(error.Operation.path, error.ErrorMessage);
+            });
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            // Since the machineFromDb is now patched, you need to map it back to a dictionary if your UpdatePartialAsync expects one
+            // Alternatively, you can adjust your service to directly accept the patched machine entity if that's more appropriate
+            var updateResult = await _machineService.UpdatePartialAsync(id, machineFromDb); // This line may need adjustment based on your implementation
 
             if (!updateResult)
             {
@@ -67,6 +86,7 @@ namespace EversServer.Controllers
 
             return NoContent();
         }
+
 
         // DELETE: api/Machine/5
         [HttpDelete("{id:length(24)}")]
