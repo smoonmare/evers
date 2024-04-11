@@ -1,21 +1,32 @@
-<div class="machine-container">
+<div class="detail-container">
   @if (machine) {
-    <ng-container>
+    <div class="image-gallery">
       <mat-card>
         <mat-card-header>
           <mat-card-title>{{ machine.name }}</mat-card-title>
-          <mat-card-subtitle>{{ machine.year }}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="machine.thumbnail" alt="Thumbnail">
+        @if (machine.images.length) {
+          <img mat-card-image [src]="machine.images[0]" alt="Machine image">
+        } @else {
+          <ng-template>
+            <div class="placeholder-image">No Image Available</div>
+          </ng-template>
+        }
+      </mat-card>
+    </div>
+  
+    <div class="machine-details">
+      <mat-card>
         <mat-card-content>
-          <p>{{ machine.description }}</p>
-          <p>Category: {{ machine.category }}</p>
-          <p>Price: ${{ machine.price }}</p>
-          <p>Location: {{ machine.location }}</p>
-          <p>Status: {{ machine.status }}</p>
+          <p><strong>Year:</strong> {{ machine.year }}</p>
+          <p><strong>Description:</strong> {{ machine.description }}</p>
+          <p><strong>Category:</strong> {{ machine.category }}</p>
+          <p><strong>Price:</strong> ${{ machine.price }}</p>
+          <p><strong>Location:</strong> {{ machine.location }}</p>
+          <p><strong>Status:</strong> {{ machine.status }}</p>
         </mat-card-content>
       </mat-card>
-    </ng-container>
+    </div>
   } @else {
     <ng-template>
       <p>Machine not found.</p>

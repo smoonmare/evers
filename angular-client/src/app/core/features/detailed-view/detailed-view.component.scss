@@ -1,0 +1,33 @@
+.detail-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+
+  .image-gallery {
+    flex: 1;
+    max-width: 40%; // Adjust this as necessary
+    margin-right: 20px;
+
+    .placeholder-image {
+      width: 100%;
+      height: 300px; // Adjust this as necessary
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #eee;
+      color: #666;
+      text-align: center;
+    }
+  }
+
+  .machine-details {
+    flex: 2;
+    max-width: 55%; // Adjust this as necessary
+
+    mat-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
+}
