@@ -1,1 +1,24 @@
-<h1>Detailed view</h1> 
+<div class="machine-container">
+  @if (machine) {
+    <ng-container>
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ machine.name }}</mat-card-title>
+          <mat-card-subtitle>{{ machine.year }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="machine.thumbnail" alt="Thumbnail">
+        <mat-card-content>
+          <p>{{ machine.description }}</p>
+          <p>Category: {{ machine.category }}</p>
+          <p>Price: ${{ machine.price }}</p>
+          <p>Location: {{ machine.location }}</p>
+          <p>Status: {{ machine.status }}</p>
+        </mat-card-content>
+      </mat-card>
+    </ng-container>
+  } @else {
+    <ng-template>
+      <p>Machine not found.</p>
+    </ng-template>
+  }
+</div>
