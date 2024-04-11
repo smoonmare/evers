@@ -5,12 +5,10 @@
         <mat-card-header>
           <mat-card-title>{{ machine.name }}</mat-card-title>
         </mat-card-header>
-        @if (machine.images.length) {
+        @if (machine.images.length > 0) {
           <img mat-card-image [src]="machine.images[0]" alt="Machine image">
         } @else {
-          <ng-template>
             <div class="placeholder-image">No Image Available</div>
-          </ng-template>
         }
       </mat-card>
     </div>
@@ -28,8 +26,6 @@
       </mat-card>
     </div>
   } @else {
-    <ng-template>
       <p>Machine not found.</p>
-    </ng-template>
   }
 </div>
