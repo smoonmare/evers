@@ -8,6 +8,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { InventoryCardComponent } from '../inventory-card/inventory-card.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-admin-dashboard',
@@ -18,7 +19,8 @@ import { InventoryCardComponent } from '../inventory-card/inventory-card.compone
     ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   templateUrl: './admin-dashboard.component.html',
   styleUrl: './admin-dashboard.component.scss'
