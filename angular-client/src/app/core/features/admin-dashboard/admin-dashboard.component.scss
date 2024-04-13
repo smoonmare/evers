@@ -14,13 +14,17 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
 
   .admin-header {
     @include flexbox-center; // Create a mixin for centered flexbox
     height: 45px;
     font-size: large;
     background-color: #f0f0f0;
+
+    button {
+      margin-left: 10px;
+    }
   }
 
   .content {
@@ -28,13 +32,13 @@
     flex-grow: 1;
     padding: 20px;
     gap: 20px;
-    overflow: visible;
+    // overflow: visible;
     /* Removed overflow: auto */
 
     .inventory-list {
       flex: 1;
       @include flexbox(column); // Reuse with column direction
-      overflow: auto;
+      // overflow: auto;
 
       .inventory-scroll {
         overflow-y: scroll;
@@ -54,6 +58,19 @@
       .form-fields-group {
         @include flexbox(column); // Reuse with column direction
       }
-    }
+
+      .form-buttons {
+        display: flex;
+        justify-content: space-between; // This will place the space evenly between and around the items
+        padding: 0 10%; // This padding ensures that the buttons fill 80% of the space (10% padding on each side)
+    
+        button {
+          margin: 0 5px;
+          flex-basis: 40%; // Each button should take up 40% of the form width
+          // Use 'flex-grow' if you want the buttons to grow and fill the space
+          flex-grow: 1; // This will allow the buttons to grow
+        }
+      } 
+    } 
   }
 }

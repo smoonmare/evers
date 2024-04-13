@@ -2,6 +2,7 @@
 
   <div class="admin-header">
     <span>Admin Dashboard</span>
+    <button mat-button color="primary" (click)="newMachine()">Add Machine</button>
   </div>
 
   <div class="content">
@@ -62,9 +63,9 @@
         </mat-form-field>
       </div>
 
-      <div>
+      <div class="form-buttons">
         <button mat-raised-button color="primary" type="submit">Save</button>
-        <button mat-raised-button color="warn" type="button" (click)="cancelEdit()">Cancel</button>
+        <button mat-raised-button color="warn" type="reset">Cancel</button>
       </div>
     </form>
   </div>

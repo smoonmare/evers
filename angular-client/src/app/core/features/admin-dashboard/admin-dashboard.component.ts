@@ -72,11 +72,6 @@ export class AdminDashboardComponent {
     this.machineForm.patchValue(machine);
   }
 
-  cancelEdit(): void {
-    this.selectedMachine = null;
-    this.machineForm.reset();
-  }
-
   applyFilter(value: Event): void {
 
   }
