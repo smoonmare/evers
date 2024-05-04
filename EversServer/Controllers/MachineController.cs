@@ -5,7 +5,7 @@ using EversServer.Services;
 
 namespace EversServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MachineController : ControllerBase
     {

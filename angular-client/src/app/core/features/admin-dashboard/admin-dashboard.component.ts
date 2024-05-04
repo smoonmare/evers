@@ -57,9 +57,36 @@ export class AdminDashboardComponent {
   onSubmit() {
     if (this.selectedMachine) {
       // Update existing machine
+      this.machineService.updateMachine(this.selectedMachine.id!, this.machineForm.value).subscribe({
+        next: () => {
+          alert('Machine updated successfully');
+          this.reloadInventory();
+        },
+        error: (err) => {
+          alert('Failed to update machine');
+          console.error(err);
+        }
+      });
     } else {
       // Create new machine
+      this.machineService.createMachine(this.machineForm.value).subscribe({
+        next: (machine) => {
+          alert('Machine created successfully');
+          this.inventory.push(machine);
+          this.machineForm.reset();
+        },
+        error: (err) => {
+          alert('Failed to create machine');
+          console.error(err);
+        }
+      });
     }
+  }
+
+  private reloadInventory() {
+    this.machineService.getInventory().subscribe(inventory => {
+      this.inventory = inventory;
+    })
   }
 
   newMachine() {
@@ -70,6 +97,19 @@ export class AdminDashboardComponent {
   selectMachine(machine: Machine): void {
     this.selectedMachine = machine;
     this.machineForm.patchValue(machine);
+  }
+
+  deleteMachine(machineId: string) {
+    this.machineService.deleteMachine(machineId).subscribe({
+      next: () => {
+        alert('Machine deleted successfully!');
+        this.inventory = this.inventory.filter(m => m.id !== machineId);
+      },
+      error: (err) => {
+        alert('Failed to delete machine');
+        console.error(err);
+      }
+    });
   }
 
   applyFilter(value: Event): void {
