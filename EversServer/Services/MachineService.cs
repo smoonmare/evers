@@ -1,7 +1,6 @@
 using MongoDB.Driver;
 using EversServer.Interfaces;
 using EversServer.Models;
-using System.Collections.Generic;
 
 namespace EversServer.Services
 {

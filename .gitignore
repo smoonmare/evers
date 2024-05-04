@@ -23,6 +23,7 @@ angular-client/.DS_Store
 angular-client/Thumbs.db
 
 # IDEs and editors Angular-Client
+.nx
 angular-client/.idea/
 angular-client/.project
 angular-client/.classpath

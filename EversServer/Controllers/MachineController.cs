@@ -2,8 +2,6 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using EversServer.Models;
 using EversServer.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace EversServer.Controllers
 {

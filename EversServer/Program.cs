@@ -16,6 +16,15 @@ builder.Services.AddSingleton<IDatabaseSettings>(sp =>
 // Register the MongoDB service
 builder.Services.AddSingleton<MachineService>();
 
+// Configure CORS to allow specific origins, methods, and headers
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        policy => policy.WithOrigins("http://localhost:4200") // Replace with the URL of your Angular app
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+});
+
 builder.Services.AddControllers();
 
 // Add Swagger generation service
@@ -35,6 +44,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("AllowSpecificOrigin"); // Apply the CORS policy
 
 app.UseAuthorization();
 
