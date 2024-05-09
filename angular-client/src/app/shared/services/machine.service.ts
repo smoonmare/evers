@@ -24,11 +24,15 @@ export class MachineService {
     return this.http.post<Machine>(`${this.baseUrl}/machine`, machine);
   }
 
-  updateMachine(id: string, machine: Machine): Observable<any> {
-    return this.http.patch(`${this.baseUrl}/machine/${id}`, machine);
+  updateMachine(id: string, machine: Machine): Observable<Machine> {
+    return this.http.put<Machine>(`${this.baseUrl}/machine/${id}`, machine, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
   }
 
-  deleteMachine(id: string): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/machine/${id}`);
+  deleteMachine(id: string): Observable<Machine> {
+    return this.http.delete<Machine>(`${this.baseUrl}/machine/${id}`);
   }
 }

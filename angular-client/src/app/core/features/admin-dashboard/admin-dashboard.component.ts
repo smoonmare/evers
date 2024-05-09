@@ -36,14 +36,16 @@ export class AdminDashboardComponent {
     private formBuilder: FormBuilder
   ) {
     this.machineForm = this.formBuilder.group({
+      id: [''],
       name: [''],
       year: [''],
       description: [''],
       category: [''],
       price: [''],
       location: [''],
+      images: [''],
+      thumbnail: [''],
       status: [''],
-      // Include other fields as necessary
     });
   }
 
@@ -54,13 +56,34 @@ export class AdminDashboardComponent {
       });
   }
 
+  private generatePatchOperations(): any[] {
+    const patchOperations: any[] = [];
+    const formValues = this.machineForm.value;
+  
+    Object.keys(formValues).forEach((key) => {
+      if (key === 'id') {
+        // Skip generating a patch operation for the `id` field
+        return;
+      }
+
+      const newValue = formValues[key];
+      if (newValue !== undefined && newValue !== null) {
+        patchOperations.push({ op: 'replace', path: `/${key}`, value: newValue });
+      }
+    });
+  
+    return patchOperations;
+  }
+  
   onSubmit() {
     if (this.selectedMachine) {
       // Update existing machine
+      const patchOperations = this.generatePatchOperations();
       this.machineService.updateMachine(this.selectedMachine.id!, this.machineForm.value).subscribe({
         next: () => {
           alert('Machine updated successfully');
           this.reloadInventory();
+          console.log(this.machineForm.value);
         },
         error: (err) => {
           alert('Failed to update machine');
@@ -97,6 +120,7 @@ export class AdminDashboardComponent {
   selectMachine(machine: Machine): void {
     this.selectedMachine = machine;
     this.machineForm.patchValue(machine);
+    console.log(machine);
   }
 
   deleteMachine(machineId: string) {
